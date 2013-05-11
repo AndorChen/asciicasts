@@ -31,16 +31,8 @@ task :server do
 end
 
 desc 'Push to github'
-task :push, :msg do |t, args|
-  if args.msg
-    msg = args.msg
-  else
-    msg = get_stdin("Enter commit message:")
-  end
-
+task :push do
   puts   "Pushing to `source' branch:"
-  system "git add -A"
-  system "git commit -m '#{msg}'"
   system "git push origin source"
   puts   "\t`source' branch updated.\n"
 
