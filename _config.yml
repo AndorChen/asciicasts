@@ -2,6 +2,8 @@ name: AsciiCasts
 description: RailsCasts 文字版
 
 exclude: ['asciicasts.sublime-project', 'asciicasts.sublime-workspace', 'Gemfile', 'Gemfile.lock', 'Rakefile']
+keep_files: ['.nojekyll', '.git']
+
 pygments: true
 permalink: /episodes/:title.html
 baseurl: /asciicasts
