@@ -25,6 +25,38 @@ task :post, :title do |t, args|
   end
 end
 
+desc 'Serve the site up'
+task :server do
+  system 'bundle exec jekyll server --watch'
+end
+
+desc 'Push to github'
+task :push, :msg do |t, args|
+  if args.msg
+    msg = args.msg
+  else
+    msg = get_stdin("Enter commit message:")
+  end
+
+  puts   "Pushing to `source' branch:"
+  system "git add -A"
+  system "git commit -m '#{msg}'"
+  system "git push origin source"
+  puts   "\t`source' branch updated.\n"
+
+  puts   "Building site...."
+  system "bundle exec jekyll build"
+  puts   "\tSite updated.\n"
+
+  cd '_site' do
+    puts   "Pushing to gh-pages branch:"
+    system "git add -A"
+    system "git commit -m 'update at #{Time.now.utc}'"
+    system "git push origin gh-pages"
+    puts   "\t`gh-pages' branch updated."
+  end
+end
+
 def get_stdin(message)
   print message
   STDIN.gets.chomp
