@@ -1,0 +1,10 @@
+---
+layout: default
+title:
+---
+
+<ul class="episodes">
+{% for post in site.sorted_posts %}
+	<li id="episode-{{ post.episode }}" class="episode"><span class="num">{{ post.episode | prepend:'#' | rjust: 4, ' '}}</span> <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>

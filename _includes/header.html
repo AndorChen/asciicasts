@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/normalize.css" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/main.css" />
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">您正在使用的浏览器过旧，为了能完美展现本网站，请<a href="http://browsehappy.com/">更新</a>，或者<a href="http://www.google.com/chromeframe/?redirect=true">激活 Google Chrome Frame</a>。</p>
+        <![endif]-->
+
+        <div class="container">
+            <header class="header">
+                <h1 class="logo"><a class="ir" href="{{ site.url }}">{{ site.name }}</a></h1>
+                <p class="description">{{ site.description }}</p>
+            </header>

@@ -1,0 +1,17 @@
+name: AsciiCasts
+description: RailsCasts 文字版
+
+exclude: ['asciicasts.sublime-project', 'asciicasts.sublime-workspace', 'Gemfile', 'Gemfile.lock', 'Rakefile']
+pygments: true
+permalink: /episodes/:title.html
+baseurl: /asciicasts
+
+markdown: kramdown
+
+kramdown:
+  auto_ids: false
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
